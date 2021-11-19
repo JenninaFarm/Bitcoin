@@ -7,7 +7,15 @@ const DateInput = (props) => {
 
   const handleDayChange = (day) => {
     setSelectedDay(day);
-    console.log(day);
+    const dateInSeconds = changeDateMiddayToSecondsMidnightUTC(day);
+    console.log(dateInSeconds);
+  }
+
+  // To convert the Date object to UNIX Timestamp at Midnight according to universal time
+  const changeDateMiddayToSecondsMidnightUTC = (day) => {
+    const dateMiddayInSeconds = parseInt((day.getTime() / 1000).toFixed(0));
+    const secondsMidnightUTC = dateMiddayInSeconds - 12 * 3600 - day.getTimezoneOffset() * 60;
+    return secondsMidnightUTC;
   }
  
   return (
