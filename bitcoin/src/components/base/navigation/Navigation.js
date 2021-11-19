@@ -5,7 +5,7 @@ const Navigation = (props) => {
   return (
     <div className='navigation'>
       {props.links.map((value, index) => {
-        return <li key={index}> <a href='#'>{value} </a></li>
+        return <li key={index}> <a href={value.href}>{value.name} </a></li>
       })}
     </div>
   );
