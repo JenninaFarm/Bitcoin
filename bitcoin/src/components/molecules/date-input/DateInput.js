@@ -8,7 +8,7 @@ const DateInput = (props) => {
   const handleDayChange = (day) => {
     setSelectedDay(day);
     const dateInSeconds = changeDateMiddayToSecondsMidnightUTC(day);
-    console.log(dateInSeconds);
+    props.onDateChange(dateInSeconds);
   }
 
   // To convert the Date object to UNIX Timestamp at Midnight according to universal time
