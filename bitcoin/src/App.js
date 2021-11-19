@@ -1,6 +1,5 @@
 import React from 'react';
 
-import logo from './logo.svg';
 
 
 import AskDateRange from './components/molecules/ask-date-range/AskDateRange';
@@ -15,7 +14,6 @@ const App = () => {
   const handleSecondsChange = (from = 0, to = 0) => {
     if (from !== 0) {
       setDateFrom(from);
-      console.log(window.location.pathname);
     } else if (to !== 0) {
       setDateTo(to);
     }
@@ -29,8 +27,16 @@ const App = () => {
         {href: 'b', name: 'b option'}, 
         {href: 'c', name: 'c-option'}
       ]} />
+      <ShowData dateFrom={secondsFrom} dateTo={secondsTo} />
+
       { window.location.pathname === '/a' && 
-        <ShowData dateFrom={secondsFrom} dateTo={secondsTo} />
+        <div> { 'content a' } </div>
+      }
+      { window.location.pathname === '/b' && 
+        <div> { 'content b' } </div>
+      }
+      { window.location.pathname === '/c' && 
+        <div> { 'content c' } </div>
       }
       
     </div>
