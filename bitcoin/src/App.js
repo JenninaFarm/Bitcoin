@@ -2,7 +2,9 @@ import React from 'react';
 
 import logo from './logo.svg';
 
+
 import AskDateRange from './components/molecules/ask-date-range/AskDateRange';
+import Navigation from './components/base/navigation/Navigation';
 // import ShowData from './components/molecules/show-data/ShowData';
 import './App.scss';
 
@@ -21,8 +23,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <AskDateRange onDateChange={handleSecondsChange} />
+      <Navigation links={['a option', 'b option', 'c-option']} />
       <header className="App-header">
-        <AskDateRange onDateChange={handleSecondsChange} />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
