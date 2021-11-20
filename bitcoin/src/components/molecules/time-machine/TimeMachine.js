@@ -11,7 +11,7 @@ const TimeMachine = ({data}) => {
 
   useEffect(() => {
     parseData();
-  }, [data])
+  })
 
   const parseData = () => {
     const prices = data.map((row) => row[1]);
