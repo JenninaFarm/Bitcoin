@@ -37,7 +37,7 @@ export const getMinIndex = (array) => {
 
 export const getDateFromMilliseconds = (millisec) => {
   const d = new Date(millisec);
-  return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
+  return `${d.getUTCDate()}.${d.getUTCMonth() + 1}.${d.getUTCFullYear()}`;
 }
 
 export const getMaxTimesValueHasDecreased = (array) => {

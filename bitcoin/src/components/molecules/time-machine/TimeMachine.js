@@ -11,13 +11,14 @@ const TimeMachine = ({data}) => {
 
   useEffect(() => {
     parseData();
-  })
+  }, [data])
 
   const parseData = () => {
     const prices = data.map((row) => row[1]);
     if (data.length - 1 === getMaxTimesValueHasDecreased(prices)) {
       setBuyNorSell(true);
     } else if (data.length !== 0) {
+      setBuyNorSell(false);
       setDateToBuy(getDateToBuy());
       setDateToSell(getDateToSell());
     }

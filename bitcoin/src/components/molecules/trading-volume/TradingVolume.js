@@ -16,7 +16,6 @@ const TradingVolume = ({data}) => {
 
   const getHighestTradingVolume = () => {
     const index = getIndexOfMaxInMultiColumnArray(data, 1);
-
     if (index !== -1) {
       setHighestTradingVolume(data[index][1]);
       const date = getDateFromMilliseconds(data[index][0]);

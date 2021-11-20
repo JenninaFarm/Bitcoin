@@ -29,11 +29,11 @@ const App = () => {
     const fetchData = async () => {
       if (secondsTo !== undefined && secondsFrom !== undefined) {
         setIsLoading(true);
-        const response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from=${secondsFrom}&to=${secondsTo + 3600}`);
-        setData(response.data);
         const daysBetween = countDaysBetween(secondsFrom, secondsTo);
         setGranularity(countGranularity(daysBetween));
-
+        const response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from=${secondsFrom}&to=${secondsTo + 3600}`);
+        setData(response.data);
+        
         setIsLoading(false);
       }
     } 
@@ -42,7 +42,7 @@ const App = () => {
 
   useEffect(() => {
     setDataAtMidnight(getDataAtMidnight());
-  }, [granularity]);
+  }, [data]);
 
   const getDataAtMidnight = () => {
     const midnightData = {prices: [], total_volumes: []};
@@ -63,7 +63,6 @@ const App = () => {
 
     midnightData.prices = midnightPrices;
     midnightData.total_volumes = midnightVolumes;
-
     return midnightData;
   }
 
