@@ -20,9 +20,8 @@ const ShowData = ({dateFrom, dateTo}) => {
     // hox! remember to include the change in granularity
     const daysBetween = countDaysBetween(dateFrom, dateTo);
     const granularity = countGranularity(daysBetween);
-    console.log(granularity);
     // get the midnight prices 
-    const dayPriceArray = getPricesAtMidnight(data.prices);
+    const dayPriceArray = getPricesAtMidnight(granularity, data.prices);
     // count the amount of decreasing days
     setDaysPriceHasDecreased(getDaysPriceHasDecreased(dayPriceArray));
 
@@ -50,11 +49,11 @@ const ShowData = ({dateFrom, dateTo}) => {
     }
   }
 
-  const getPricesAtMidnight = (prices) => {
+  const getPricesAtMidnight = (granularity, prices) => {
     const midnightPrices = [];
     for (let i = 0; i < prices.length; i++) {
       midnightPrices.push(prices[i][1]);
-      i += 23;
+      i += granularity;
     }
     return midnightPrices;
   }
