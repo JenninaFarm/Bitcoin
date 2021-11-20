@@ -38,7 +38,6 @@ const App = () => {
       { window.location.pathname === '/c' && 
         <div> { 'content c' } </div>
       }
-      
     </div>
   );
 }
