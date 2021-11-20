@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-const ShowData = ({data, granularity}) => {
+const ShowData = ({data}) => {
   const [daysPriceHasDecreased, setDaysPriceHasDecreased] = useState();
 
   useEffect(() => {
@@ -8,21 +8,10 @@ const ShowData = ({data, granularity}) => {
   });
 
   const parseData = (data) => {
-    // get the midnight prices 
-    const dayPriceArray = getPricesAtMidnight(data.prices);
     // count the amount of decreasing days
-    setDaysPriceHasDecreased(getDaysPriceHasDecreased(dayPriceArray));
+    setDaysPriceHasDecreased(getDaysPriceHasDecreased(data));
 
     // const highestTraidingVolume = getHighestTradingVolume(data.total_volumes);
-  }
-
-  const getPricesAtMidnight = (prices) => {
-    const midnightPrices = [];
-    for (let i = 0; i < prices.length; i++) {
-      midnightPrices.push(prices[i][1]);
-      i += granularity;
-    }
-    return midnightPrices;
   }
 
   const getDaysPriceHasDecreased = (prices) => {

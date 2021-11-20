@@ -10,7 +10,8 @@ import axios from 'axios';
 const App = () => {
   const [secondsFrom, setDateFrom] = useState();
   const [secondsTo, setDateTo] = useState();
-  const [data, setData] = useState({prices: [1, 2]});
+  const [data, setData] = useState({prices: [], total_voluems: []});
+  const [dataAtMidnight, setDataAtMidnight] = useState({prices: [], total_volumes: []});
   const [granularity, setGranularity] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,7 +30,7 @@ const App = () => {
         setIsLoading(true);
         const response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from=${secondsFrom}&to=${secondsTo + 3600}`);
         setData(response.data);
-
+        console.log(response.data);
         const daysBetween = countDaysBetween(secondsFrom, secondsTo);
         setGranularity(countGranularity(daysBetween));
 
@@ -37,7 +38,28 @@ const App = () => {
       }
     } 
     fetchData();
-  }, [secondsFrom, secondsTo])
+  }, [secondsFrom, secondsTo]);
+
+  useEffect(() => {
+    setDataAtMidnight(getDataAtMidnight());
+  }, [granularity]);
+
+  const getDataAtMidnight = () => {
+    const midnightData = {prices: [], total_volumes: []};
+    const midnightPrices = [];
+    const midnightVolumes = [];
+
+    for (let i = 0; i < data.prices.length; i++) {
+      midnightPrices.push(data.prices[i][1]);
+      midnightVolumes.push(data.total_volumes[i][1]);
+      i += granularity;
+    }
+
+    midnightData.prices = midnightPrices;
+    midnightData.total_volumes = midnightVolumes;
+
+    return midnightData;
+  }
 
 
   const countDaysBetween = (from, to) => {
@@ -71,8 +93,8 @@ const App = () => {
         <div>Loading ...</div>
       ) : (
         <div>
-          <ShowData data={data} granularity={granularity} />
-          <TradingVolume data={data} />
+          <ShowData data={dataAtMidnight.prices} />
+          <TradingVolume data={dataAtMidnight.total_volumes} />
         </div>
       )}
 
