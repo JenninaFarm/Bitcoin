@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { getMaxTimesValueHasDecreased } from '../../base/HelperFunctions';
 
 const ShowData = ({data}) => {
   const [daysPriceHasDecreased, setDaysPriceHasDecreased] = useState();
@@ -9,24 +10,9 @@ const ShowData = ({data}) => {
 
   const parseData = (data) => {
     // count the amount of decreasing days
-    setDaysPriceHasDecreased(getDaysPriceHasDecreased(data));
+    const prices = data.map((row) => row[1]);
+    setDaysPriceHasDecreased(getMaxTimesValueHasDecreased(prices));
   }
-
-  const getDaysPriceHasDecreased = (prices) => {
-    const daysDecreasedInRow = [];
-    let days = 0;
-    for(let i = 1; i < prices.length; i++) {
-      if (prices[i-1] > prices[i][1]) {
-        days++;
-      } else {
-        daysDecreasedInRow.push(days);
-        days = 0;
-      }
-    }
-    daysDecreasedInRow.push(days);
-    return Math.max(...daysDecreasedInRow);
-  }
-  
 
   return (
     <div>

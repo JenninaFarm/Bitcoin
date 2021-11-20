@@ -23,3 +23,20 @@ export const getDateFromMilliseconds = (millisec) => {
   return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
 }
 
+export const getMaxTimesValueHasDecreased = (array) => {
+  const timesDecresedInRow = [];
+  let times = 0;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      times++;
+    } else {
+      timesDecresedInRow.push(times);
+      times = 0;
+    }
+  }
+
+  timesDecresedInRow.push(times);
+  return Math.max(...timesDecresedInRow);
+}
+
