@@ -16,7 +16,7 @@ const ShowData = ({data}) => {
     const daysDecreasedInRow = [];
     let days = 0;
     for(let i = 1; i < prices.length; i++) {
-      if (prices[i-1] > prices[i]) {
+      if (prices[i-1] > prices[i][1]) {
         days++;
       } else {
         daysDecreasedInRow.push(days);
