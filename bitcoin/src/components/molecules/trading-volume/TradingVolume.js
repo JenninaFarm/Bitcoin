@@ -1,8 +1,11 @@
 import React, { useEffect, useState }  from "react";
 
+import {getIndexOfMaxInMultiColumnArray, getDateFromMilliseconds} from "../../base/HelperFunctions"; 
+
 const TradingVolume = ({data}) => {
   const [highestTradingVolume, setHighestTradingVolume] = useState();
   const [theDayOfHighestTradingVolume, setTheDayOfHighestTradingVolume] = useState();
+  
   useEffect(() => {
     parseData(data);
   });
@@ -12,38 +15,14 @@ const TradingVolume = ({data}) => {
   }
 
   const getHighestTradingVolume = () => {
-    const volumes = data.map((row) => row[1]);
-    const index = indexOfMax(volumes);
+    const index = getIndexOfMaxInMultiColumnArray(data, 1);
+
     if (index !== -1) {
       setHighestTradingVolume(data[index][1]);
       const date = getDateFromMilliseconds(data[index][0]);
       setTheDayOfHighestTradingVolume(date);
     }
   }
-
-  const getDateFromMilliseconds = (millisec) => {
-    const d = new Date(millisec);
-    return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
-  }
-
-  function indexOfMax(arr) {
-    if (arr.length === 0) {
-        return -1;
-    }
-
-    var max = arr[0];
-    var maxIndex = 0;
-
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            maxIndex = i;
-            max = arr[i];
-        }
-    }
-
-    return maxIndex;
-}
-
 
   return (
     <div>
