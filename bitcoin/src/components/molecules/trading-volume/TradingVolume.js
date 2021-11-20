@@ -1,6 +1,6 @@
 import React, { useEffect, useState }  from "react";
 
-const TradingVolume = ({data, granularity}) => {
+const TradingVolume = ({data}) => {
   const [highestTradingVolume, setHighestTradingVolume] = useState();
   const [theDayOfHighestTradingVolume, setTheDayOfHighestTradingVolume] = useState();
   useEffect(() => {
@@ -8,7 +8,6 @@ const TradingVolume = ({data, granularity}) => {
   });
 
   const parseData = (data) => {
-    setHighestTradingVolume();
     getHighestTradingVolume();
   }
 
@@ -17,8 +16,14 @@ const TradingVolume = ({data, granularity}) => {
     const index = indexOfMax(volumes);
     if (index !== -1) {
       setHighestTradingVolume(data[index][1]);
-      setTheDayOfHighestTradingVolume(data[index][0]);
+      const date = getDateFromMilliseconds(data[index][0]);
+      setTheDayOfHighestTradingVolume(date);
     }
+  }
+
+  const getDateFromMilliseconds = (millisec) => {
+    const d = new Date(millisec);
+    return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
   }
 
   function indexOfMax(arr) {
@@ -46,7 +51,12 @@ const TradingVolume = ({data, granularity}) => {
       {highestTradingVolume}
       <br />
       {'The day of highest trading volume: '}
-      {theDayOfHighestTradingVolume}
+      {theDayOfHighestTradingVolume && (
+        <div>
+          {theDayOfHighestTradingVolume}
+        </div>
+        )
+      }
     </div>
   )
 }
