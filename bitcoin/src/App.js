@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AskDateRange from './components/molecules/ask-date-range/AskDateRange';
 import Navigation from './components/base/navigation/Navigation';
 import ShowData from './components/molecules/show-data/ShowData';
+import TimeMachine from './components/molecules/time-machine/TimeMachine';
 import TradingVolume from './components/molecules/trading-volume/TradingVolume';
 import './App.scss';
 import axios from 'axios';
@@ -50,8 +51,11 @@ const App = () => {
     const midnightVolumes = [];
 
     for (let i = 0; i < data.prices.length; i++) {
+      const volumes = [];
       midnightPrices.push(data.prices[i][1]);
-      midnightVolumes.push(data.total_volumes[i][1]);
+      volumes.push(data.total_volumes[i][0]);
+      volumes.push(data.total_volumes[i][1]);
+      midnightVolumes.push(volumes);
       i += granularity;
     }
 
@@ -95,6 +99,7 @@ const App = () => {
         <div>
           <ShowData data={dataAtMidnight.prices} />
           <TradingVolume data={dataAtMidnight.total_volumes} />
+          <TimeMachine data={dataAtMidnight.prices} />
         </div>
       )}
 

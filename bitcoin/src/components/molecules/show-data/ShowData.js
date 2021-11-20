@@ -10,8 +10,6 @@ const ShowData = ({data}) => {
   const parseData = (data) => {
     // count the amount of decreasing days
     setDaysPriceHasDecreased(getDaysPriceHasDecreased(data));
-
-    // const highestTraidingVolume = getHighestTradingVolume(data.total_volumes);
   }
 
   const getDaysPriceHasDecreased = (prices) => {
