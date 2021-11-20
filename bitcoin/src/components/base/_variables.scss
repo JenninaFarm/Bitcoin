@@ -1,0 +1,54 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* fonts */
+$font-body: 'Open Sans', 'Arial', sans-serif;
+$font-heading: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+
+/* font sizes in rem */
+$font-12: 0.75rem;
+$font-14: 0.875rem;
+$font-16: 1rem;
+$font-17: 1.0625rem;
+$font-18: 1.125rem;
+$font-20: 1.25rem;
+$font-21: 1.3125rem;
+$font-22: 1.375rem;
+$font-24: 1.5rem;
+$font-32: 2rem;
+$font-40: 2.5rem;
+$font-48: 3rem;
+$font-60: 3.75rem;
+$font-80: 5rem;
+
+/* body */
+$body-font-size: $font-16;
+$body-font-size-desktop: $font-20;
+
+/* headings */
+$h1-font-size: $font-32;
+$h1-font-size-desktop: $font-48;
+$h2-font-size: $font-24;
+$h2-font-size-desktop: $font-32;
+$h3-font-size: $font-21;
+$h3-font-size-desktop: $font-24;
+$h4-font-size: $font-20;
+$h4-font-size-desktop: $font-21;
+
+/* Font weight */
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+/* Spacings */
+$space-xxs: 0.25rem;
+$space-xs: 0.5rem;
+$space-s: 1rem;
+$space-m: 1.25rem;
+$space-l: 2rem;
+$space-xl: 3rem;
+$space-xxl: 4.5rem;
+ 

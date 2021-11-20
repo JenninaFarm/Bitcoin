@@ -5,7 +5,7 @@ import Navigation from './components/base/navigation/Navigation';
 import ShowData from './components/molecules/show-data/ShowData';
 import TimeMachine from './components/molecules/time-machine/TimeMachine';
 import TradingVolume from './components/molecules/trading-volume/TradingVolume';
-import './App.scss';
+import './Styles.scss';
 import axios from 'axios';
 
 const App = () => {
