@@ -86,7 +86,8 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className="app">
+      <h1 className="app__title">BitApp</h1>
       <AskDateRange onDateChange={handleSecondsChange} />
       <Navigation links={[
         {href: 'a', name: 'a option'}, 

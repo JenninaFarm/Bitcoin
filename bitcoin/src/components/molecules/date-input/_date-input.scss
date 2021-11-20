@@ -1,3 +1,11 @@
 .date-input {
   background-color: clr(primary);
+
+  &__headline {
+    font-size: $h3-font-size;
+    
+    @include breakpoint(laptop) {
+      font-size: $h3-font-size-desktop;
+    }
+  }
 }

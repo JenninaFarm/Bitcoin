@@ -19,9 +19,9 @@ const DateInput = (props) => {
   }
  
   return (
-    <div>
-      {selectedDay && <p>Day: {selectedDay.toLocaleDateString()}</p>}
-      {!selectedDay && <p>Choose a day</p>}
+    <div className='date-input'>
+      {selectedDay && <p className='date-input__headline'>Day: {selectedDay.toLocaleDateString()}</p>}
+      {!selectedDay && <p className='date-input__headline'>Choose a day</p>}
       <DayPickerInput onDayChange={handleDayChange} />
     </div>
   );
