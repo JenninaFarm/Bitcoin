@@ -9,7 +9,6 @@ const ShowData = ({data}) => {
   });
 
   const parseData = (data) => {
-    // count the amount of decreasing days
     const prices = data.map((row) => row[1]);
     setDaysPriceHasDecreased(getMaxTimesValueHasDecreased(prices));
   }
