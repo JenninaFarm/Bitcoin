@@ -8,6 +8,14 @@
       font-size: $h1-font-size-desktop;
     }
   }
+
+  &__subtitle {
+    font-size: $h3-font-size;
+  }
+
+  @include breakpoint(laptop) {
+    font-size: $h3-font-size-desktop;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

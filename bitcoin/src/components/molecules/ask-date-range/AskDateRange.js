@@ -14,8 +14,16 @@ const AskDateRange = (props) => {
 
   return (
     <div className='ask-date-range'>
-      <DateInput className='ask-date-range__from-date' onDateChange={handleDateFromChange} />
-      <DateInput className='ask-date-range__to-date' onDateChange={handleDateToChange} />
+      <DateInput 
+        className='ask-date-range__from-date' 
+        onDateChange={handleDateFromChange}
+        title='From:'
+      />
+      <DateInput 
+        className='ask-date-range__to-date' 
+        onDateChange={handleDateToChange} 
+        title='To:'
+      />
     </div>
   );
 }

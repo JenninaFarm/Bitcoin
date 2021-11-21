@@ -32,8 +32,12 @@ $h2-font-size: $font-24;
 $h2-font-size-desktop: $font-32;
 $h3-font-size: $font-21;
 $h3-font-size-desktop: $font-24;
-$h4-font-size: $font-20;
-$h4-font-size-desktop: $font-21;
+$h4-font-size: $font-18;
+$h4-font-size-desktop: $font-20;
+
+/* navigatio */
+$nav-font-size: $font-18;
+$nav-font-size-desktop: $font-20;
 
 
 /* Spacings */
@@ -47,4 +51,6 @@ $space-xxl: 4.5rem;
 
 /* Borders */
 $border-radius-small: 0.5rem;
+
+$border-navigation: 2px solid clr(navigation-border);
  

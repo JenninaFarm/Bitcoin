@@ -1,0 +1,27 @@
+.navigation {
+  @include list-reset;
+
+  background-color: clr(primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-size: $nav-font-size;
+  padding: $space-xs;
+  margin-top: $space-s;
+
+  @include breakpoint(laptop) {
+    font-size: $nav-font-size-desktop;
+  }
+
+  &__list-item {
+    padding: $space-xs;
+    margin: 0 $space-xxs;
+    border: $border-navigation;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: clr(text);
+  }
+}
