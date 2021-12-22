@@ -1,6 +1,7 @@
 .header {
   background-color: clr(primary);
   color: clr(text-inverse);
+  padding: $space-xs $space-xl $space-l $space-xl;
 
   &__container {
     @include breakpoint(laptop) {

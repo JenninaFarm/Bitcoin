@@ -1,5 +1,9 @@
 .ask-date-range {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  width: max-content;
+  background-color: clr(text-inverse);
+  color: clr(text);
+  border-radius: $border-radius-large;
+  margin: auto;
 }

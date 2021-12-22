@@ -4,6 +4,7 @@ COLORS DECLARED
 $color-black: #000;
 $color-white: #fff;
 $color-dark-gray: #404E4D;
+$color-light-gray: #D3D3D3;
 $color-shade-red: #C3423F;
 $color-green: #A6BF36;
 $color-light-green: #CCD645;
@@ -22,7 +23,7 @@ $defaultColors: (
   text: $color-black,
   text-inverse: $color-white,
   primary: $color-dark-navy,
-  navigation-border: $color-light-green,
+  border-date-picker: $color-light-gray,
 );
 
 /*********************

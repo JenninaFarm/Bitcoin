@@ -1,11 +1,31 @@
 .date-input {
   width: auto;
 
+
+  &:not(:first-child) {
+    border-left: $border-date-picker;
+  }
+
   &__headline {
     font-size: $h4-font-size;
+    margin: 0;
+    text-align: left;
+    margin-left: $space-s;
+    width: max-content;
     
     @include breakpoint(laptop) {
       font-size: $h4-font-size-desktop;
     }
+  }
+
+  .DayPickerInput {
+    input {
+      outline: none;
+      border-radius: 1.5rem;
+    }
+  }
+
+  .DayPicker-Day--future {
+    color: clr(text-inverse);
   }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import DayPicker from 'react-day-picker/DayPicker';
 import 'react-day-picker/lib/style.css';
+import { getDateFromMilliseconds } from '../../base/HelperFunctions';
 
 const DateInput = (props) => {
   const [selectedDay, setSelectedDay] = React.useState();
@@ -22,7 +24,12 @@ const DateInput = (props) => {
     <div className='date-input'>
       {selectedDay && <p className='date-input__headline'>Day: {selectedDay.toLocaleDateString()}</p>}
       {!selectedDay && <p className='date-input__headline'>{props.title}</p>}
-      <DayPickerInput onDayChange={handleDayChange} />
+      <DayPickerInput 
+        placeholder='Add dates'
+        dayPickerProps={{
+          disabledDays: { after: new Date() },
+        }}
+        onDayChange={handleDayChange} />
     </div>
   );
 }
