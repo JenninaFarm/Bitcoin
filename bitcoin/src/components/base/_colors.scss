@@ -9,6 +9,7 @@ $color-green: #A6BF36;
 $color-light-green: #CCD645;
 $color-light-blue-green: #ACD49C;
 $color-light-turquoise: #BADECA;
+$color-dark-navy: #00043d;
 
 
 /*********************
@@ -20,7 +21,7 @@ DEFAULT COLORS
 $defaultColors: (
   text: $color-black,
   text-inverse: $color-white,
-  primary: $color-green,
+  primary: $color-dark-navy,
   navigation-border: $color-light-green,
 );
 

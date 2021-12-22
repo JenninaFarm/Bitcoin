@@ -1,0 +1,24 @@
+.header {
+  background-color: clr(primary);
+  color: clr(text-inverse);
+
+  &__container {
+    @include breakpoint(laptop) {
+      display: flex;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: $icon-large;
+    height: $icon-large;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

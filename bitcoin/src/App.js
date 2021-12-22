@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import AskDateRange from './components/molecules/ask-date-range/AskDateRange';
+import Header from './components/organisms/header/Header';
 import Navigation from './components/base/navigation/Navigation';
 import ShowData from './components/molecules/decreased-days-in-row/DecreasedDaysInRow';
 import TimeMachine from './components/molecules/time-machine/TimeMachine';
@@ -87,14 +87,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="app__title">BitApp</h1>
-      <h3 className="app__subtitle">Please choose a date range:</h3>
-      <AskDateRange onDateChange={handleSecondsChange} />
-      <Navigation links={[
-        {href: '#', name: 'a option'}, 
-        {href: '#', name: 'b option'}, 
-        {href: '#', name: 'c-option'}
-      ]} />
+      <Header onDateChange={handleSecondsChange} />
+    
       {isLoading ? (
         <div>Loading ...</div>
       ) : (
@@ -104,7 +98,7 @@ const App = () => {
           <TimeMachine data={dataAtMidnight.prices} />
         </div>
       )}
-
+  <a href="https://www.freepik.com/vectors/background">Background vector created by starline - www.freepik.com</a>
       { window.location.pathname === '/a' && 
         <div> { 'content a' } </div>
       }
