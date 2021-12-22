@@ -1,0 +1,8 @@
+.decreased-days {
+  padding: $space-s;
+  font-size: $body-font-size;
+
+  @include breakpoint(laptop) {
+    font-size: $body-font-size-desktop;
+  }
+}

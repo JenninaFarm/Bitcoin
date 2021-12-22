@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import AskDateRange from './components/molecules/ask-date-range/AskDateRange';
 import Navigation from './components/base/navigation/Navigation';
-import ShowData from './components/molecules/show-data/ShowData';
+import ShowData from './components/molecules/decreased-days-in-row/DecreasedDaysInRow';
 import TimeMachine from './components/molecules/time-machine/TimeMachine';
 import TradingVolume from './components/molecules/trading-volume/TradingVolume';
 import './Styles.scss';
@@ -91,9 +91,9 @@ const App = () => {
       <h3 className="app__subtitle">Please choose a date range:</h3>
       <AskDateRange onDateChange={handleSecondsChange} />
       <Navigation links={[
-        {href: 'a', name: 'a option'}, 
-        {href: 'b', name: 'b option'}, 
-        {href: 'c', name: 'c-option'}
+        {href: '#', name: 'a option'}, 
+        {href: '#', name: 'b option'}, 
+        {href: '#', name: 'c-option'}
       ]} />
       {isLoading ? (
         <div>Loading ...</div>
