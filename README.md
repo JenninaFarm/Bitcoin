@@ -1,4 +1,4 @@
-# ![BitApp]( https://bitapp-app.herokuapp.com/images/demo/demo-full.png)
+# ![BitApp]( ./bitcoin/src/images/demo/demo-full.png)
 # Bitcoin
 
 <table>
