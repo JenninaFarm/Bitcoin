@@ -89,7 +89,7 @@ const App = () => {
     <div className="app">
       <Header onDateChange={handleSecondsChange} />
       {(data.prices.length === 0) && (
-        <h2 className="app__subtitle">Please choose date range above</h2>
+        <h2 className="app__subtitle">Please choose date range above or type it (yyyy-m-d)</h2>
       )}
       {isLoading ? (
         <h3 className="app__loading-title">Loading ...</h3>
