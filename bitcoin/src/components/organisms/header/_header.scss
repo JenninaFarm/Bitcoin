@@ -3,19 +3,10 @@
   color: clr(text-inverse);
   padding: $space-xs $space-xl $space-l $space-xl;
 
-  &__container {
-    @include breakpoint(laptop) {
-      display: flex;
-    }
-  }
-
   &__logo-container {
     display: flex;
     align-items: center;
-
-    @include breakpoint (laptop) {
-      margin-right: $space-xxl;
-    }
+    margin-bottom: $space-s;
   }
 
   &__logo {

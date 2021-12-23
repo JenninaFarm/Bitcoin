@@ -28,4 +28,8 @@ input {
   border: none;
   margin: $space-xs;
   background-color: transparent;
+
+  @include breakpoint(laptop) {
+    font-size: $font-18;
+  }
 }
