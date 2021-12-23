@@ -12,6 +12,10 @@
   &__logo-container {
     display: flex;
     align-items: center;
+
+    @include breakpoint (laptop) {
+      margin-right: $space-xxl;
+    }
   }
 
   &__logo {
