@@ -25,12 +25,16 @@ const TradingVolume = ({data}) => {
     }
   }
 
+  function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
   return (
     <div>
       {(highestTradingVolume || theDayOfHighestTradingVolume) && (
         <Card 
           title='Highest Trading volume:'
-          value={highestTradingVolume}
+          value={numberWithSpaces(Math.round(highestTradingVolume)) + ' €'}
           title2='The day of highest trading volume:'
           value2={theDayOfHighestTradingVolume}
           image_src={diagram}
