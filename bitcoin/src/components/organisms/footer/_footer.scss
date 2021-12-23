@@ -1,0 +1,8 @@
+.footer {
+  padding: $space-m;
+  background-color: clr(primary);
+
+  &__credits {
+    color: clr(text-inverse);
+  }
+}

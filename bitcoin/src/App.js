@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from './components/organisms/header/Header';
+import Footer from './components/organisms/footer/Footer';
 import ShowData from './components/molecules/decreased-days-in-row/DecreasedDaysInRow';
 import TimeMachine from './components/molecules/time-machine/TimeMachine';
 import TradingVolume from './components/molecules/trading-volume/TradingVolume';
@@ -99,7 +100,7 @@ const App = () => {
           <TimeMachine data={dataAtMidnight.prices} />
         </div>
       )}
-      <a href="https://www.freepik.com/vectors/background">Background vector created by starline - www.freepik.com</a>
+      <Footer />
     </div>
   );
 }
