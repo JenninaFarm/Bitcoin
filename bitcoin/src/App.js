@@ -87,9 +87,11 @@ const App = () => {
   return (
     <div className="app">
       <Header onDateChange={handleSecondsChange} />
-    
+      {(data.prices.length === 0) && (
+        <h2 className="app__subtitle">Please choose date range</h2>
+      )}
       {isLoading ? (
-        <div>Loading ...</div>
+        <h3 className="app__loading_title">Loading ...</h3>
       ) : (
         <div>
           <ShowData data={dataAtMidnight.prices} />
