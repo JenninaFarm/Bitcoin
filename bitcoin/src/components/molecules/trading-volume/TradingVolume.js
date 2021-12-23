@@ -27,21 +27,16 @@ const TradingVolume = ({data}) => {
 
   return (
     <div>
-      {highestTradingVolume && (
+      {(highestTradingVolume || theDayOfHighestTradingVolume) && (
         <Card 
           title='Highest Trading volume:'
           value={highestTradingVolume}
+          title2='The day of highest trading volume:'
+          value2={theDayOfHighestTradingVolume}
           image_src={diagram}
         />
       )}
-      {theDayOfHighestTradingVolume && (
-        <Card 
-          title='The day of highest trading volume:'
-          value={theDayOfHighestTradingVolume}
-          image_src={diagram}
-        />
-        )
-      }
+     
     </div>
   )
 }
