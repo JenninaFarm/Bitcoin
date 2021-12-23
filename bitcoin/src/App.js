@@ -94,7 +94,7 @@ const App = () => {
       {isLoading ? (
         <h3 className="app__loading-title">Loading ...</h3>
       ) : (
-        <div>
+        <div className="app__content">
           <ShowData data={dataAtMidnight.prices} />
           <TradingVolume data={dataAtMidnight.total_volumes} />
           <TimeMachine data={dataAtMidnight.prices} />

@@ -4,6 +4,8 @@
   &__title {
     font-size: $h1-font-size;
 
+    
+
     @include breakpoint(laptop) {
       font-size: $h1-font-size-desktop;
     }
@@ -11,6 +13,12 @@
 
   &__subtitle {
     font-size: $h3-font-size;
+  }
+
+  &__content {
+    @include breakpoint(phablet) {
+      display: flex;
+    }
   }
 
   @include breakpoint(laptop) {
