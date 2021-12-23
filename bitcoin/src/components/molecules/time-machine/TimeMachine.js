@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getDateFromMilliseconds, getIndexOfMaxInMultiColumnArray, getMaxTimesValueHasDecreased, getMinIndex } from "../../base/HelperFunctions";
+import Card from '../card/Card';
+import piggy from '../../../images/piggy-bank.jpg';
+
 
 // the best day for buying bitcoin, and the best day for selling the
 // bought bitcoin to maximize profits. If the price only decreases in the date range, your
@@ -35,7 +38,20 @@ const TimeMachine = ({data}) => {
   }
 
   return (
+    
     <div>
+      {!buyNorSell ? (
+        <Card
+          image_src={piggy}
+          title='Date to buy:'
+          value={dateToBuy}
+        />
+      ) : (
+        <Card
+          image_src={piggy}
+          title='Do not buy nor sell'
+        />
+      )}
       {'Buy nor sell: ' + buyNorSell}
       <br/>
       {'Date to buy: '}

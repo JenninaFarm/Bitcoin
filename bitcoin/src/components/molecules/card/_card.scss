@@ -1,0 +1,25 @@
+.card {
+  $base_class: &; 
+  background-color: clr(primary);
+  color: clr(text-inverse);
+  border-radius: $border-radius-medium;
+
+  &__image {
+    max-width: 100%;
+    border-top-left-radius: $border-radius-medium;
+    border-top-right-radius: $border-radius-medium;
+
+  }
+
+  &__content {
+    padding: $space-m;
+
+    #{$base_class}__title {
+      margin: 0;
+    }
+
+    #{$base_class}__value {
+      margin: 0;
+    }
+  }
+}

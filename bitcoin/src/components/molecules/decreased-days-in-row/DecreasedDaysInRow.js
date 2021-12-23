@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getMaxTimesValueHasDecreased } from '../../base/HelperFunctions';
+import Card from '../card/Card';
+import diagram from '../../../images/diagram.jpg';
 
 const DecreasedDaysInRow = ({data}) => {
   const [daysPriceHasDecreased, setDaysPriceHasDecreased] = useState();
@@ -18,10 +20,11 @@ const DecreasedDaysInRow = ({data}) => {
   return (
     <div className='decreased-days'>
       {daysPriceHasDecreased && (
-        <div>
-          <p>Maximum amount of days the price has decreased in a row:</p>
-          <p>{daysPriceHasDecreased}</p>
-        </div>
+        <Card 
+          image_src={diagram}
+          title="Maximum amount of days the price has decreased in a row:"
+          value={daysPriceHasDecreased}
+        />
         )
       }
     </div>
