@@ -21,6 +21,16 @@ BREAKPOINTS
 }
 
 /*********************
+SPACER
+*********************/
+@mixin element-spacer() {
+  margin-top: $space-m;
+  margin-bottom: $space-m;
+  margin-left: $space-m;
+  margin-right: $space-m;
+}
+
+/*********************
 RESETS
 *********************/
 

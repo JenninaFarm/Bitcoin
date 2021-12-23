@@ -2,6 +2,7 @@ import React, { useEffect, useState }  from "react";
 
 import Card from '../card/Card';
 import {getIndexOfMaxInMultiColumnArray, getDateFromMilliseconds} from "../../base/HelperFunctions"; 
+import diagram from '../../../images/diagram.jpg';
 
 const TradingVolume = ({data}) => {
   const [highestTradingVolume, setHighestTradingVolume] = useState();
@@ -30,14 +31,15 @@ const TradingVolume = ({data}) => {
         <Card 
           title='Highest Trading volume:'
           value={highestTradingVolume}
+          image_src={diagram}
         />
       )}
       {theDayOfHighestTradingVolume && (
         <Card 
           title='The day of highest trading volume:'
           value={theDayOfHighestTradingVolume}
+          image_src={diagram}
         />
-        
         )
       }
     </div>

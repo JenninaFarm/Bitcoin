@@ -1,4 +1,6 @@
 .card {
+  @include element-spacer();
+
   $base_class: &; 
   background-color: clr(primary);
   color: clr(text-inverse);

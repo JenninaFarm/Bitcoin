@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getMaxTimesValueHasDecreased } from '../../base/HelperFunctions';
 import Card from '../card/Card';
-import diagram from '../../../images/diagram.jpg';
+import diagram from '../../../images/render-design.jpg';
 
 const DecreasedDaysInRow = ({data}) => {
   const [daysPriceHasDecreased, setDaysPriceHasDecreased] = useState();
