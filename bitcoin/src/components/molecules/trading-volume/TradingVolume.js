@@ -34,6 +34,7 @@ const TradingVolume = ({data}) => {
           title2='The day of highest trading volume:'
           value2={theDayOfHighestTradingVolume}
           image_src={diagram}
+          image_alt=""
         />
       )}
      

@@ -22,6 +22,7 @@ const DecreasedDaysInRow = ({data}) => {
       {daysPriceHasDecreased && (
         <Card 
           image_src={diagram}
+          image_alt=""
           title="Maximum amount of days the price has decreased in a row:"
           value={daysPriceHasDecreased}
         />

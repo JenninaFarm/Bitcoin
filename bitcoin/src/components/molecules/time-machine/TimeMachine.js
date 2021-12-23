@@ -43,6 +43,7 @@ const TimeMachine = ({data}) => {
       {(dateToSell || dateToBuy) && (
         <Card
           image_src={piggy}
+          image_alt=""
           title='Date to buy:'
           value={dateToBuy}
           title2='Date to sell:'
@@ -52,6 +53,7 @@ const TimeMachine = ({data}) => {
       {buyNorSell && (
         <Card
           image_src={piggy}
+          image_alt=""
           title='Do not buy nor sell'
         />
       )}
