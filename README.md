@@ -15,15 +15,15 @@ Here is a working live demo :  https://bitapp-app.herokuapp.com/
 ## Site
 
 ### Landing Page
-![]( https://bitapp-app.herokuapp.com/images/demo/demo-landing.png)
+![](  ./bitcoin/src/images/demo/demo-landing.png)
 
 ### Result
-![]( https://bitapp-app.herokuapp.com/images/demo/demo-result.png)
+![](  ./bitcoin/src/images/demo/demo-result.png)
 
 ## Mobile support
 The WebApp is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
 
-![]( https://bitapp-app.herokuapp.com/images/demo/demo-mobile.png)
+![](  ./bitcoin/src/images/demo/demo-mobile.png)
 
 ## [Usage](https://bitapp-app.herokuapp.com/) 
 
