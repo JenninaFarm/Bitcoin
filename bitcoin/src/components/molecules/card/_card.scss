@@ -20,8 +20,14 @@
       margin: 0;
     }
 
-    #{$base_class}__value {
+    #{$base_class}__title2 {
       margin: 0;
+      padding-top: $space-s;
+    }
+
+    #{$base_class}__value, #{$base_class}__value2 {
+      margin: 0;
+      padding-top: $space-xxs;
     }
   }
 }
