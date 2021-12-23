@@ -1,14 +1,10 @@
 import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import DayPicker from 'react-day-picker/DayPicker';
 import 'react-day-picker/lib/style.css';
-import { getDateFromMilliseconds } from '../../base/HelperFunctions';
 
 const DateInput = (props) => {
-  const [selectedDay, setSelectedDay] = React.useState();
 
   const handleDayChange = (day) => {
-    setSelectedDay(day);
     if(day !== undefined) {
       const dateInSeconds = changeDateMiddayToSecondsMidnightUTC(day);
       props.onDateChange(dateInSeconds);
