@@ -16,7 +16,7 @@ BREAKPOINTS
     @media (min-width: 37.5em)  { @content ; }
  }
  @else if $point == mobileonly {
-    @media (max-width: 37.5em)  { @content ; }
+    @media (max-width: 27.5em)  { @content ; }
  }
 }
 

@@ -1,9 +1,18 @@
 .date-input {
   width: auto;
 
+  @include breakpoint(mobileonly) {
+    background-color: clr(text-inverse);
+    margin-bottom: $space-xs;
+    border-radius: $border-radius-large;
+  }
 
   &:not(:first-child) {
     border-left: $border-date-picker;
+
+    @include breakpoint(mobileonly) {
+      border: none;
+    }
   }
 
   &__headline {

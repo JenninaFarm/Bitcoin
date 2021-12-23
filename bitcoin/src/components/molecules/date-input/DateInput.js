@@ -22,8 +22,7 @@ const DateInput = (props) => {
  
   return (
     <div className='date-input'>
-      {selectedDay && <p className='date-input__headline'>Day: {selectedDay.toLocaleDateString()}</p>}
-      {!selectedDay && <p className='date-input__headline'>{props.title}</p>}
+      <p className='date-input__headline'>{props.title}</p>
       <DayPickerInput 
         placeholder='Add dates'
         dayPickerProps={{

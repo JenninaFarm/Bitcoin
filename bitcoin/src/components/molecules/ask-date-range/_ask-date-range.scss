@@ -6,4 +6,9 @@
   color: clr(text);
   border-radius: $border-radius-large;
   margin: auto;
+
+  @include breakpoint(mobileonly) {
+    flex-direction: column;
+    background-color: transparent;
+  }
 }
