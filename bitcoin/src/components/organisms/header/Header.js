@@ -8,7 +8,7 @@ const Header = ({onDateChange}) => {
   return (
     <header className="header">
       <div className="header__logo-container">
-        <img className="header__logo" src={logo} />
+        <img className="header__logo" src={logo} alt="BitApp Logo"/>
         <h1 className="header__title">BitApp</h1>
       </div>
       
