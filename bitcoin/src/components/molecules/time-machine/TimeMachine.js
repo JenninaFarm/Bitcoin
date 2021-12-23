@@ -40,25 +40,21 @@ const TimeMachine = ({data}) => {
   return (
     
     <div>
-      {!buyNorSell ? (
+      {(dateToSell || dateToBuy) && (
         <Card
           image_src={piggy}
           title='Date to buy:'
           value={dateToBuy}
+          title2='Date to sell:'
+          value2={dateToSell}
         />
-      ) : (
+      )}
+      {buyNorSell && (
         <Card
           image_src={piggy}
           title='Do not buy nor sell'
         />
       )}
-      {'Buy nor sell: ' + buyNorSell}
-      <br/>
-      {'Date to buy: '}
-      {dateToBuy}
-      <br/>
-      {'Date to sell: '}
-      {dateToSell}
     </div>
   )
 }
