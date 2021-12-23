@@ -11,7 +11,7 @@ import axios from 'axios';
 const App = () => {
   const [secondsFrom, setDateFrom] = useState();
   const [secondsTo, setDateTo] = useState();
-  const [data, setData] = useState({prices: [], total_voluems: []});
+  const [data, setData] = useState({prices: [], total_volumes: []});
   const [dataAtMidnight, setDataAtMidnight] = useState({prices: [], total_volumes: []});
   const [granularity, setGranularity] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
